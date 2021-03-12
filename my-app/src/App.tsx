@@ -6,38 +6,41 @@ function hello() {
   alert('Hello Briws');
 }
 
-// hello();
-
 function App() {
   // полезное что-то
   // обязана вернуть JSX
+  console.log("App rendering")
   return (
     <div>
-      This is APP component.
+      <AppTitle />
       <Rating />
       <Accordion />
+      <Rating />
     </div>
   );
 }
 
+function AppTitle() {
+  console.log("AppTitle rendering")
+  return <>This is APP component!</>
+}
+
 function Rating() {
+  console.log("Rating rendering")
   return (
-    <div>
+    <>
       <Star />
       <Star />
       <Star />
       <Star />
       <Star />
-    </div>
+    </>
   )
 }
 
 function Star() {
-  return (
-    <div>
-      <div>* Star *</div>
-    </div>
-  );
+  console.log("star rendering")
+  return <div>* Star *</div>
 }
 
 function Accordion() {
