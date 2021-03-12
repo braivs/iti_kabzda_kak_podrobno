@@ -43,14 +43,24 @@ function Star() {
   return <div>* Star *</div>
 }
 
-function Accordion() {
-  return <div>
-    <h3>Меню</h3>
+function AccordionTitle() {
+  return <h3>Меню my</h3>
+}
+
+function AccordionBody() {
+  return (
     <ul>
-      <li>1</li>
-      <li>2</li>
+      <li>1 gl</li>
+      <li>2 hf</li>
       <li>3</li>
     </ul>
+  )
+}
+
+function Accordion() {
+  return <div>
+    <AccordionTitle />
+    <AccordionBody />
   </div>
 }
 
