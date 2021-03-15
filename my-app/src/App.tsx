@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import Accordion from "./components/Accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
 
-function hello() {
-  debugger;
-  alert('Hello Briws');
-}
+/* Задание: Сделать такой же title для компоненты Accordion. Обратить внимание Accordion состоит из двух частей.
+ Передать props-ы c title заголовком. Важный момент: title попадёт в Accordion но title самому Accordion не нужен.
+ Он должен взять этот title и передать дальше в AccordionTitle. А AccordionTitle поставит его уже между h3
+
+ */
 
 function App() {
   // полезное что-то
@@ -12,56 +15,27 @@ function App() {
   console.log("App rendering")
   return (
     <div>
-      <AppTitle />
-      <Rating />
+      <PageTitle title={"This is APP component!"}/>
+      <PageTitle title={"My friends"}/>
+      Article 1
+      <Rating value={3}/>
       <Accordion />
-      <Rating />
+      <Accordion />
+      Article 2
+      <Rating value={0}/>
+      <Rating value={1}/>
+      <Rating value={2}/>
+      <Rating value={3}/>
+      <Rating value={4}/>
+      <Rating value={5}/>
+
     </div>
   );
 }
 
-function AppTitle() {
-  console.log("AppTitle rendering")
-  return <>This is APP component!</>
-}
-
-function Rating() {
-  console.log("Rating rendering")
-  return (
-    <>
-      <Star />
-      <Star />
-      <Star />
-      <Star />
-      <Star />
-    </>
-  )
-}
-
-function Star() {
-  console.log("star rendering")
-  return <div>* Star *</div>
-}
-
-function AccordionTitle() {
-  return <h3>Меню my</h3>
-}
-
-function AccordionBody() {
-  return (
-    <ul>
-      <li>1 gl</li>
-      <li>2 hf</li>
-      <li>3</li>
-    </ul>
-  )
-}
-
-function Accordion() {
-  return <div>
-    <AccordionTitle />
-    <AccordionBody />
-  </div>
+function PageTitle(props: any) {
+  console.log("PageTitle rendering")
+  return <h1>{props.title}</h1>
 }
 
 export default App;
