@@ -3,28 +3,19 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 
-/*
-Есть два аккордиона.
-Аккордион должен вернуть разметку либо с body, либо без body. Это определяется из вне.
-Надо передать атрибут collapsed. Если true, то не должны увидеть accordionBody. Если collapsed = false, тогда
-аккордион должен показать и title и body
-*/
-
 function App(props: any) {
   // полезное что-то
   // обязана вернуть JSX
   console.log("App rendering")
   return (
     <div>
-      {/*<PageTitle title={"This is APP component!"}/>*/}
-      {/*<PageTitle title={"My friends"}/>*/}
-      {/*Article 1*/}
-      {/*<Rating value={3}/>*/}
-      <Accordion titleValue={"Menu"}/>
-      {/*<Accordion titleValue={"Menu"} collapsed={true}/>*/}
-      {/*<Accordion titleValue={"Menu"} collapsed={false}/>*/}
-
-      <Accordion titleValue={"Users"}/>
+      <PageTitle title={"This is APP component!"}/>
+      <PageTitle title={"My friends"}/>
+      Article 1
+      <Rating value={3}/>
+      <Accordion titleValue={"Menu"} collapsed={false} />
+      <Accordion titleValue={"Users"} collapsed={true}/>
+      <Accordion titleValue={"Texts"} collapsed={false}/>
       <Rating value={0}/>
       <Rating value={1}/>
       <Rating value={2}/>
