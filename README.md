@@ -1,1 +1,1 @@
-# ITI_pre5_4lessonsOfReactTS
+# iti_kabzda_kak_podrobno
