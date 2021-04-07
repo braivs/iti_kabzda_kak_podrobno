@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Accordion from './components/Accordion/Accordion';
 import {Rating} from './components/Rating/Rating';
 import {OnOffMy} from './components/OnOffMy/OnOffMy';
 import OnOff from './components/OnOff/OnOff';
+import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 
 function App(props: any) {
   // полезное что-то
@@ -16,8 +16,9 @@ function App(props: any) {
       <OnOff />
       <OnOff />
 
-      {/*<Accordion titleValue={'Menu'} collapsed={true}/>
-      <Accordion titleValue={'Users'} collapsed={false}/>
+      <UncontrolledAccordion titleValue={'Menu'}/>
+      <UncontrolledAccordion titleValue={'Users'}/>
+      {/*
       <Rating value={0} />
       <Rating value={1} />
       <Rating value={2} />
