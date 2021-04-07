@@ -8,19 +8,10 @@ type onOffType = {
 export function OnOff(props: onOffType) {
   let color;
   props.on ? color = s.green : color = s.red
-  if (props.on) {
-    return <form>
-      <button className={color}>on</button>
-      <button>off</button>
-      <div className={`${s.circle} ${color}`}></div>
-    </form>
-  } else {
-    return <form>
-      <button>on</button>
-      <button className={color}>off</button>
-      <div className={`${s.circle} ${color}`}></div>
-    </form>
-  }
 
+  return <form>
+      {props.on ? <button className={color}>on</button> : <button>on</button>}
+      {props.on ? <button>off</button> : <button className={color}>off</button>}
+      <div className={`${s.circle} ${color}`}></div>
+    </form>
 }
-

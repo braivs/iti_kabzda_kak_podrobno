@@ -22,6 +22,7 @@ function App(props: any) {
       <OnOff on={false}/>
       <OnOff on={true}/>
       <OnOff on={true}/>
+      <OnOff on={false}/>
 
     </div>
   );
