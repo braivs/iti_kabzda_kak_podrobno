@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-import {Rating} from './components/Rating/Rating';
-import {OnOffMy} from './components/OnOffMy/OnOffMy';
 import OnOff from './components/OnOff/OnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
+import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 
 function App(props: any) {
   // полезное что-то
@@ -18,6 +17,8 @@ function App(props: any) {
 
       <UncontrolledAccordion titleValue={'Menu'}/>
       <UncontrolledAccordion titleValue={'Users'}/>
+
+      <UncontrolledRating />
       {/*
       <Rating value={0} />
       <Rating value={1} />
