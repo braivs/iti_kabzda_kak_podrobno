@@ -1,11 +1,11 @@
 import React from 'react';
-import s from './OnOff.module.css'
+import s from './OnOffMy.module.css'
 
 type onOffType = {
   on : boolean
 }
 
-export function OnOff(props: onOffType) {
+export function OnOffMy(props: onOffType) {
   let color;
   props.on ? color = s.green : color = s.red
 
