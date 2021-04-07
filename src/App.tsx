@@ -11,10 +11,10 @@ function App(props: any) {
   console.log('App rendering')
   return (
     <div>
-      <OnOff on={false} />
-      <OnOff on={true} />
-      <OnOff on={true} />
-      <OnOff on={true} />
+      <OnOff />
+      <OnOff />
+      <OnOff />
+      <OnOff />
 
       {/*<Accordion titleValue={'Menu'} collapsed={true}/>
       <Accordion titleValue={'Users'} collapsed={false}/>
