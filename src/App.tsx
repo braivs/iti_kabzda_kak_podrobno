@@ -15,7 +15,6 @@ function App(props: any) {
       <OnOff />
 
       <UncontrolledAccordion titleValue={'Menu'}/>
-      <Accordion titleValue={'Menu'} collapsed={false} />
 
       <UncontrolledRating />
 
