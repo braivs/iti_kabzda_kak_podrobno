@@ -3,22 +3,23 @@ import './App.css';
 import OnOff from './components/OnOff/OnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
+import {Rating} from './components/Rating/Rating';
+import Accordion from './components/Accordion/Accordion';
 
 function App(props: any) {
   // полезное что-то
   // обязана вернуть JSX
   console.log('App rendering')
   return (
-    <div>
-      <OnOff />
-      <OnOff />
-      <OnOff />
+    <div className={'App'}>
       <OnOff />
 
       <UncontrolledAccordion titleValue={'Menu'}/>
-      <UncontrolledAccordion titleValue={'Users'}/>
+      <Accordion titleValue={'Menu'} collapsed={false} />
 
       <UncontrolledRating />
+
+      <Rating value={3} />
       {/*
       <Rating value={0} />
       <Rating value={1} />
