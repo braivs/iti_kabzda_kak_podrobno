@@ -19,7 +19,7 @@ function App(props: any) {
 
       <UncontrolledRating />
 
-      <Rating value={3} />
+      {/*<Rating value={3} />*/}
 
     </div>
   );
