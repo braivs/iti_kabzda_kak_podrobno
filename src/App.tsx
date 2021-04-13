@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from './components/Rating/Rating';
+import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 
 function App(props: any) {
   console.log('App rendering')
@@ -12,7 +13,7 @@ function App(props: any) {
       <Rating value={ratingValue}
               onClick={setRatingValue}/>
 
-      {/*<Rating value={3} />*/}
+      <UncontrolledRating />
 
     </div>
   );
