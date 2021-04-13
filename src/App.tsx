@@ -8,7 +8,7 @@ function App(props: any) {
   console.log('App rendering')
 
   let [ratingValue, setRatingValue] = useState<RatingValueType>(4)
-  let [accordionCollapsed, setAccordianCollapsed] = useState<boolean>(true)
+  let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
 
 
   return (
@@ -19,7 +19,7 @@ function App(props: any) {
 
       <UncontrolledRating />
       
-      <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} />
+      <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
 
     </div>
   );
