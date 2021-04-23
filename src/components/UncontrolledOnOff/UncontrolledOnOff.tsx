@@ -4,7 +4,7 @@ type PropsType = {
   onChange: (on: boolean) => void
 }
 
-function UncontrolledOnOff(props: PropsType) {
+export function UncontrolledOnOff(props: PropsType) {
   console.log('OnOffUncontrolled rendering')
 
   let [on, setOn] = useState(false); // hook with init value
@@ -53,5 +53,3 @@ function UncontrolledOnOff(props: PropsType) {
     <div style={indicatorStyle}/>
   </div>
 }
-
-export default UncontrolledOnOff;
