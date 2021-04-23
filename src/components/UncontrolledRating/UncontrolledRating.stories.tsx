@@ -3,7 +3,10 @@ import {UncontrolledRating} from './UncontrolledRating';
 
 
 export default {
-  title: 'UncontrolledRating stories',
+  title: 'UncontrolledRating',
   component: UncontrolledRating,
 }
 
+export const ModeChanging = () => {
+    return <UncontrolledRating />
+}

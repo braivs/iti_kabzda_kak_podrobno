@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {UncontrolledAccordion} from './UncontrolledAccordion';
 
 export default {
-  title: 'UncontrolledAccordion stories',
+  title: 'UncontrolledAccordion',
   component: UncontrolledAccordion,
 }
 
-export const MenuUncontrolledAccordion = () => <UncontrolledAccordion titleValue={'Menu'}/>;
-export const UsersUncontrolledAccordion = () => <UncontrolledAccordion titleValue={'Users'}/>;
 
+export const ModeChanging = () => {
+  return <UncontrolledAccordion titleValue={'Users'}/>
+};
