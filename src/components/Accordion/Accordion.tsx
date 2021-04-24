@@ -43,13 +43,3 @@ function AccordionBody() {
     <li>3</li>
   </ul>
 }
-
-/**
- * @typeParam T Comment for type `T`.
- * You may also use the template tag.
- * @template T comment for type `T`.
- */
-function doSomething<T>(target: T, text: string): number {
-  return 3;
-}
-doSomething()
