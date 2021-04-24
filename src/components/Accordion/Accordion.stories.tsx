@@ -5,29 +5,37 @@ import {Story} from '@storybook/react';
 
 
 export default {
-  title: 'Accordion',
+  title: 'components/Accordion',
   component: Accordion,
 }
 
 const callback = action('accordion mode change event fired');
 
 const Template: Story<AccordionPropsType> = (args) => <Accordion {...args} />;
+const callbackProps = {
+  onChange: callback
+}
+
 
 export const MenuCollapsedMode = Template.bind({})
 MenuCollapsedMode.args = {
+  ...callbackProps,
   titleValue: 'Menu',
   collapsed: true,
-  onChange: callback
 }
 
 export const UsersUncollapsedMode = Template.bind({})
 UsersUncollapsedMode.args = {
+  ...callbackProps,
   titleValue: 'Users',
   collapsed: false,
-  onChange: callback
 }
 
-export const ModeChanging = () => {
+export const ModeChanging: Story<AccordionPropsType> = (args) => {
   const [value, setValue] = useState<boolean>(true)
-  return <Accordion titleValue={'Users'} collapsed={value} onChange={() => setValue(!value)} />
+
+  return <Accordion {...args} collapsed={value} onChange={() => setValue(!value)}/>
 };
+ModeChanging.args = {
+  titleValue: 'Users'
+}
