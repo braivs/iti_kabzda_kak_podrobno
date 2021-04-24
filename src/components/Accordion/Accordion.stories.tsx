@@ -3,10 +3,26 @@ import {Accordion, AccordionPropsType} from './Accordion';
 import {action} from '@storybook/addon-actions';
 import {Story} from '@storybook/react';
 
+const GetCategoryObj = (categoryName: 'Color' | 'Event' | 'Main') => ({
+  table: {
+    category: categoryName
+  }
+})
 
 export default {
   title: 'components/Accordion',
   component: Accordion,
+  argTypes: {
+    color: {
+      control: 'color',
+      ...GetCategoryObj('Color')
+    },
+    onChange: {
+      ...GetCategoryObj('Event')
+    },
+    collapsed: {...GetCategoryObj('Main')},
+    titleValue: {...GetCategoryObj('Main')}
+  }
 }
 
 const callback = action('accordion mode change event fired');
