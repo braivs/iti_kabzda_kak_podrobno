@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useRef, useState} from 'react';
 
 export default {
   title: 'input',
@@ -10,16 +10,26 @@ export const UncontrolledInput = () => <input/>
 export const TrackValueOfUncontrolledInput = () => {
   const [value, setValue] = useState('');
 
-  return <><input onChange={(event) => {
+  const onChange = (event: ChangeEvent<HTMLInputElement> ) => {
     const actualValue = event.currentTarget.value;
     setValue(actualValue);
-  } } /> - {value} </>;
+  }
+
+  return <><input onChange={ onChange }/> - {value} </>;
 }
 
 export const GetValueOfUncontrolledInputByButtonPress = () => {
   const [value, setValue] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  return <><input  /> <button onClick={() => setValue('yo')}>save</button> - actual value: {value} </>;
+  const save = () => {
+    const el = inputRef.current as HTMLInputElement;
+    setValue(el.value)
+  }
+
+  return <>
+    <input ref={inputRef}/> <button onClick={ save }>save </button> - actual value: {value} </>
 }
 
-export const ControlledInputWithFixedValue = () => <input value='briws.ru'/>
+
+export const ControlledInputWithFixedValue = () => <input value="briws.ru"/>
