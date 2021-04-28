@@ -26,10 +26,12 @@ export default {
 }
 
 const callback = action('accordion mode change event fired');
+const onClickCallback = action('some item was clicked');
 
 const Template: Story<AccordionPropsType> = (args) => <Accordion {...args} />;
 const callbackProps = {
-  onChange: callback
+  onChange: callback,
+  onClick: onClickCallback
 }
 
 
@@ -38,6 +40,7 @@ MenuCollapsedMode.args = {
   ...callbackProps,
   titleValue: 'Menu',
   collapsed: true,
+  items: []
 }
 
 export const UsersUncollapsedMode = Template.bind({})
@@ -45,6 +48,12 @@ UsersUncollapsedMode.args = {
   ...callbackProps,
   titleValue: 'Users',
   collapsed: false,
+  items: [
+    {title: 'Dimich', value: 1},
+    {title: 'Valera', value: 2},
+    {title: 'Artem', value: 3},
+    {title: 'Victor', value: 4}
+  ]
 }
 
 export const ModeChanging: Story<AccordionPropsType> = (args) => {
@@ -53,5 +62,14 @@ export const ModeChanging: Story<AccordionPropsType> = (args) => {
   return <Accordion {...args} collapsed={value} onChange={() => setValue(!value)}/>
 };
 ModeChanging.args = {
-  titleValue: 'Users'
+  titleValue: 'Users',
+  items: [
+    {title: 'Dimich', value: 1},
+    {title: 'Valera', value: 2},
+    {title: 'Artem', value: 3},
+    {title: 'Victor', value: 4}
+  ],
+  onClick: (value) => {
+    alert(`user with ID ${value} should be happy`)
+  }
 }
