@@ -1,33 +1,35 @@
-import React from 'react';
-import {Select, SelectPropsType} from './Select';
-import {Story} from '@storybook/react';
+import React, {useState} from 'react';
+import {Select} from './Select';
 
 export default {
-  title: 'components/Select',
+  title: 'Select',
   component: Select,
 }
 
+export const WithValue = () => {
+  const [value, setValue] = useState('2')
+  return <>
+    <Select onChange={setValue}
+            value={value}
+            items={[
+              {value: '1', title: 'Minsk'},
+              {value: '2', title: 'Moscow'},
+              {value: '3', title: 'Kiev'},
 
-/*const Template: Story<AccordionPropsType> = (args) => <Select {...args} />;
-export const SelectStory = Template.bind({})*/
-
-
-
-export const SelectStory: Story<SelectPropsType> = (args) => {
-  return <Select {...args}  />
+            ]}/>
+  </>
 }
+export const WithoutValue = () => {
+  const [value, setValue] = useState(null)
 
-SelectStory.args = {
-  value : 3,
-  items: [
-    {title: 'option 1', value: 1},
-    {title: 'option 2', value: 2},
-    {title: 'option 3', value: 3},
-    {title: 'option 4', value: 4}
-  ]
+  return <>
+    <Select onChange={setValue}
+            value={value}
+            items={[
+              {value: '1', title: 'Minsk'},
+              {value: '2', title: 'Moscow'},
+              {value: '3', title: 'Kiev'},
+
+            ]}/>
+  </>
 }
-
-/*export const SelectStory: Story = (args) => {
-  return <Select />
-}*/
-// export const SelectStory = SelectStory1.bind({})
