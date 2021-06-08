@@ -58,9 +58,8 @@ UsersUncollapsedMode.args = {
 
 export const ModeChanging: Story<AccordionPropsType> = (args) => {
   const [value, setValue] = useState<boolean>(true)
-  const AccordionMemo = React.memo(Accordion);
 
-  return <AccordionMemo {...args} collapsed={value} onChange={() => setValue(!value)}/>
+  return <Accordion {...args} collapsed={value} onChange={() => setValue(!value)}/>
 };
 ModeChanging.args = {
   titleValue: 'Users',

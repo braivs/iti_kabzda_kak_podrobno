@@ -7,7 +7,7 @@ type RatingPropsType = {
   onClick: (value: RatingValueType) => void
 }
 
-export function Rating(props: RatingPropsType) {
+export const Rating: React.FC<RatingPropsType> = React.memo((props) => {
   console.log('Rating rendering')
 
   return (
@@ -19,7 +19,7 @@ export function Rating(props: RatingPropsType) {
       <Star selected={props.value > 4} onClick={props.onClick} value={5}/>
     </div>
   )
-}
+})
 
 type StarPropsType = {
   selected: boolean

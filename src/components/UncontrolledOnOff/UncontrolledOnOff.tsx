@@ -5,7 +5,7 @@ type PropsType = {
   defaultOn?: boolean
 }
 
-export function UncontrolledOnOff(props: PropsType) {
+export const UncontrolledOnOff:React.FC<PropsType> = React.memo((props) => {
   console.log('OnOffUncontrolled rendering')
 
   let [on, setOn] = useState(props.defaultOn ? props.defaultOn: false); // hook with init value
@@ -53,4 +53,4 @@ export function UncontrolledOnOff(props: PropsType) {
     <div style={offStyle} onClick={ offClicked }>Off</div>
     <div style={indicatorStyle}/>
   </div>
-}
+})
