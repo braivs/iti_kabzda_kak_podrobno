@@ -13,6 +13,7 @@ type SelectPropsType = {
 }
 
 export const Select: React.FC<SelectPropsType> = React.memo((props) => {
+  console.log('select rendering')
 
   const [active, setActive] = useState(false)
   const [hoveredElementValue, setHoveredElementValue] = useState(props.value)

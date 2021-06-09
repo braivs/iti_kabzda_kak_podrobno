@@ -2,8 +2,9 @@
   width: 600px;
   margin: 200px auto;
 }
-.flexHorizontal {
+.flex {
   display: flex;
   width: 500px;
   justify-content: space-between;
+  border: 1px solid red;
 }

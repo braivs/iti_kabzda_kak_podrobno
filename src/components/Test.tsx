@@ -56,8 +56,11 @@ export function Test() {
   const [value1, setValue1] = useState(2)
   const [value2, setValue2] = useState(2)
   const [value3, setValue3] = useState(2)
+  const [counter, setCounter] = useState(0);
 
-  return <div className="flexHorizontal">
+  return <div className='flexHorizontal'>
+    {counter}
+    <button onClick={() => setCounter(counter + 1)}>+</button>
     <Select onChange={setValue1}
             value={value1}
             items={oneCountryCities}/>
