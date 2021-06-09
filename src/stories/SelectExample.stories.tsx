@@ -51,9 +51,9 @@ export const SelectExample = () => {
   //1. города принадлежат одной стране
   const oneCountryCities = arrFormat(cities[countryID_2])
   //2. город кончается на и
-  const IEndedCities = arrFormat(unityArray.filter(e => e.title[e.title.length - 1] === 'и'))
-  //3. численность населения больше 3000000
-  const over3MilCities = arrFormat(unityArray.filter(e => e.pollution > 3000000))
+  const IEndedCities = arrFormat(unityArray.filter(e => e.title[0] === 'М'))
+  //3. численность населения больше 5000000
+  const over3MilCities = arrFormat(unityArray.filter(e => e.pollution > 5000000))
 
   const CounterComponent = React.memo(() => {
     return <div>
@@ -79,20 +79,20 @@ export const SelectExample = () => {
   return <div className={s.flex}>
     <CounterComponent />
     <div>
-      <h1>1. города принадлежат одной стране;</h1>
+      <h1>1. Города принадлежат одной стране;</h1>
       <Select onChange={setValue1}
               value={value1}
               items={oneCountryCitiesMemo}/>
     </div>
     <div>
-      <h1>2. город кончается на и;</h1>
+      <h1>2. Города на букву М</h1>
       <Select onChange={setValue2}
               value={value2}
               items={IEndedCitiesMemo}/>
     </div>
     <div>
       <div>
-        <h1>3. численность населения больше 3000000;</h1>
+        <h1>3. Численность населения больше 5000000;</h1>
         <Select onChange={setValue3}
                 value={value3}
                 items={over3MilCitiesMemo}/>
