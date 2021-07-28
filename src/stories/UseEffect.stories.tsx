@@ -35,22 +35,15 @@ export const SimpleExample = () => {
 
 export const SetTimeoutExample = () => {
 
-  const returnTime = () => {
-    let a = new Date()
-    return a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds()
-  }
-
   const [fake, setFake] = useState(1)
-  const [counter, setCounter] = useState<string>(returnTime());
+  const [counter, setCounter] = useState(1);
 
   console.log('SetTimeoutExample');
-
-
 
   useEffect(() => {
 
     setInterval(() => {
-      setCounter(returnTime)
+      setCounter((state) => state +1)
     }, 1000)
 
   },[])
@@ -58,7 +51,7 @@ export const SetTimeoutExample = () => {
 
 
   return <>
-    Hello, time: {counter} - fake: {fake}
+    Hello, counter: {counter} - fake: {fake}
     {/*<button onClick={() => setFake(fake + 1)}>fake+</button>
     <button onClick={() => setCounter(counter + 1)}>counter+</button>*/}
   </>
