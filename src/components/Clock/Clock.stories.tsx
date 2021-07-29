@@ -1,5 +1,5 @@
 import React from 'react';
-import {Clock} from "./Clock";
+import {Clock} from "./ClockBriws";
 
 export default {
   title: 'Clock',

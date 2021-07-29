@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
-import s from './AnalogClockBriws.module.scss'
+import s from './AnalogViewBriws.module.scss'
 
 type PropsType = {
 }
 
-export const AnalogClockBriws: React.FC<PropsType> = (props) => {
+export const AnalogViewBriws: React.FC<PropsType> = (props) => {
   const [date, setDate] = useState(new Date())
 
   useEffect(() => {

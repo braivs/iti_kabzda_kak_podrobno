@@ -1,5 +1,5 @@
 import React from "react";
-import {ClockViewPropsType, get2DigitsString} from "./Clock";
+import {ClockViewPropsType, get2DigitsString} from "./ClockBriws";
 
 export const DigitalClockView: React.FC<ClockViewPropsType> = ({date}) => {
   return <>

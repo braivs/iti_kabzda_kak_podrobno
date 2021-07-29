@@ -1,33 +1,17 @@
-import React, {useEffect, useState} from 'react'; // 1
+import React, {useEffect, useState} from 'react';
+import {DigitalViewBriws} from "./DigitalViewBriws";
+import {AnalogViewBriws} from "./AnalogViewBriws/AnalogViewBriws"; // 1
 
-export default {
-  title: 'Clock by Briws',
+export const get2DigitsString = (num: number) => num < 10 ? '0' + num : num
 
+type PropsType = {
+  mode: 'digital' | 'analog'
 }
 
-const returnTime = () => {
-  let a = new Date()
-  return a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds()
-}
-
-export const ClockBriws = () => {
-
-  const [counter, setCounter] = useState<string>(returnTime());
-
-  useEffect(() => {
-
-    const intervalID = setInterval(() => {
-      setCounter(returnTime)
-    }, 1000)
-
-    return () => {
-      clearInterval(intervalID)
-    }
-  },[])
-
-
-
-  return <>
-    time: {counter}
-  </>
+export const ClockBriws: React.FC<PropsType> = (props) => {
+  switch (props.mode) {
+    case 'digital': return <DigitalViewBriws />
+    case 'analog': return <AnalogViewBriws />
+    default: return <>'no mode selected'</>
+  }
 }
